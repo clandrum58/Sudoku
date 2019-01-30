@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <title>My First Sudoku Puzzle Solver</title>
+    <meta charset="UTF-8">
+    <script src="myscript.js"></script>
+    <link rel="stylesheet" href="styles.css">
+ 
+</head>
+
+<body>
+
+    <h1>Sudoku Puzzle Solver</h1>
+    <!-- This tag creates a horizontal line. <hr> -->
+
+    <!-- Concepts from the tutorial
+    <p id="p01" title="Mouse Over Text"> <b>This is a <mark>paragraph.</mark></b></p>
+    <p>My favorite color is <del>blue</del> red.</p>
+    -->
+    <table class="">
+        <tr>
+            <td id="r1c1">&nbsp;</td>
+            <td id="r1c2">&nbsp;</td>
+            <td id="r1c3" class="brdr">&nbsp;</td>
+            <td id="r1c4">&nbsp;</td>
+            <td id="r1c5">&nbsp;</td>
+            <td id="r1c6" class="brdr">&nbsp;</td>
+            <td id="r1c7">&nbsp;</td>
+            <td id="r1c8">&nbsp;</td>
+            <td id="r1c9" class="brdr">&nbsp;</td>
+        </tr>
+        <tr>
+            <td id="r2c1">&nbsp;</td>
+            <td id="r2c2">&nbsp;</td>
+            <td id="r2c3" class="brdr">&nbsp;</td>
+            <td id="r2c4">&nbsp;</td>
+            <td id="r2c5">&nbsp;</td>
+            <td id="r2c6" class="brdr">&nbsp;</td>
+            <td id="r2c7">&nbsp;</td>
+            <td id="r2c8">&nbsp;</td>
+            <td id="r2c9" class="brdr">&nbsp;</td>
+        </tr>
+        <tr class="rbrdr">
+            <td id="r3c1">&nbsp;</td>
+            <td id="r3c2">&nbsp;</td>
+            <td id="r3c3" class="brdr">&nbsp;</td>
+            <td id="r3c4">&nbsp;</td>
+            <td id="r3c5">&nbsp;</td>
+            <td id="r3c6" class="brdr">&nbsp;</td>
+            <td id="r3c7">&nbsp;</td>
+            <td id="r3c8">&nbsp;</td>
+            <td id="r3c9" class="brdr">&nbsp;</td>
+        </tr>
+        <tr>
+            <td id="r4c1">&nbsp;</td>
+            <td id="r4c2">&nbsp;</td>
+            <td id="r4c3" class="brdr">&nbsp;</td>
+            <td id="r4c4">&nbsp;</td>
+            <td id="r4c5">&nbsp;</td>
+            <td id="r4c6" class="brdr">&nbsp;</td>
+            <td id="r4c7">&nbsp;</td>
+            <td id="r4c8">&nbsp;</td>
+            <td id="r4c9" class="brdr">&nbsp;</td>
+        </tr>
+        <tr>
+            <td id="r5c1">&nbsp;</td>
+            <td id="r5c2">&nbsp;</td>
+            <td id="r5c3" class="brdr">&nbsp;</td>
+            <td id="r5c4">&nbsp;</td>
+            <td id="r5c5">&nbsp;</td>
+            <td id="r5c6" class="brdr">&nbsp;</td>
+            <td id="r5c7">&nbsp;</td>
+            <td id="r5c8">&nbsp;</td>
+            <td id="r5c9" class="brdr">&nbsp;</td>
+        </tr>
+        <tr class="rbrdr">
+            <td id="r6c1">&nbsp;</td>
+            <td id="r6c2">&nbsp;</td>
+            <td id="r6c3" class="brdr">&nbsp;</td>
+            <td id="r6c4">&nbsp;</td>
+            <td id="r6c5">&nbsp;</td>
+            <td id="r6c6" class="brdr">&nbsp;</td>
+            <td id="r6c7">&nbsp;</td>
+            <td id="r6c8">&nbsp;</td>
+            <td id="r6c9" class="brdr">&nbsp;</td>
+        </tr>
+        <tr>
+            <td id="r7c1">&nbsp;</td>
+            <td id="r7c2">&nbsp;</td>
+            <td id="r7c3" class="brdr">&nbsp;</td>
+            <td id="r7c4">&nbsp;</td>
+            <td id="r7c5">&nbsp;</td>
+            <td id="r7c6" class="brdr">&nbsp;</td>
+            <td id="r7c7">&nbsp;</td>
+            <td id="r7c8">&nbsp;</td>
+            <td id="r7c9" class="brdr">&nbsp;</td>
+        </tr>
+        <tr>
+            <td id="r8c1">&nbsp;</td>
+            <td id="r8c2">&nbsp;</td>
+            <td id="r8c3" class="brdr">&nbsp;</td>
+            <td id="r8c4">&nbsp;</td>
+            <td id="r8c5">&nbsp;</td>
+            <td id="r8c6" class="brdr">&nbsp;</td>
+            <td id="r8c7">&nbsp;</td>
+            <td id="r8c8">&nbsp;</td>
+            <td id="r8c9" class="brdr">&nbsp;</td>
+        </tr>
+        <tr>
+            <td id="r9c1">&nbsp;</td>
+            <td id="r9c2">&nbsp;</td>
+            <td id="r9c3" class="brdr">&nbsp;</td>
+            <td id="r9c4">&nbsp;</td>
+            <td id="r9c5">&nbsp;</td>
+            <td id="r9c6" class="brdr">&nbsp;</td>
+            <td id="r9c7">&nbsp;</td>
+            <td id="r9c8">&nbsp;</td>
+            <td id="r9c9" class="brdr">&nbsp;</td>
+        </tr>
+    </table>
+    <h2 id=solvedMsg>Placeholder for solved message!</h2>
+    <h3 id=cnt1Msg>Placeholder for Count1 message.</h3>
+    <h3 id=cnt2Msg>Placeholder for Count3 message.</h3>
+    <hr style="margin-top: 20px"> <!-- This tag creates a horizontal line. -->
+    <button class="btn" onclick="loadGame()">Load Game</button>
+    <button class="btn" onclick="solvePuzzle()">Solve</button>
+    <button class="btn" onclick="testButton()">Test</button>
+    <button class="btn" onclick="forceComplete()">Solve by Force</button>
+
+</body>
+
+</html>
