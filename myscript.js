@@ -105,11 +105,13 @@ function solveByForce(startAt) {
                     nextIndex = cellEntry[2] + 1;
                     break;
                 }
+                // Try next candidate for this row & col
             }
         }
         nextCell = checkForOpenSlots();
         r = nextCell[0];
         c = nextCell[1];
+
     } while (slotsOpen);
 
     console.log("End of run...")
@@ -130,7 +132,6 @@ function backTrack() {
         }
     } while (backTrackInProgress);
     return lastEntry;
-    
 }
 
 function checkForOpenSlots() {
